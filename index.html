@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a, b, c, d;
+
+        do{
+            a = prompt("Enter a number: ");
+            if(a != Number(a)){
+                alert("Only numerical values will be accepted.");
+            }
+        }while(a != Number(a));
+        a = parseInt(a);
+        b = a % 2;
+
+        if(b == 0){
+            for(c = a; c > 0; c--){
+                document.writeln(c);
+                for(d = 1; d < c; d++){
+                    document.writeln(c); 
+                }
+                document.write("<br/>");    
+            }
+        }
+        else{
+            for(c = a; c > 0; c--){
+                let e = '';
+                for(d = 1; d <= a; d++){
+                    e += c + ' ';
+                }
+                document.write(e.trim() + "<br/>");
+            }
+        }
+    </script>
+    <a href="index2.html">4Q_FA5_Escovilla_2</a>
+</body>
+</html>

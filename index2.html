@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="name">Input a name: </label>
+    <input type="text" id="name">
+    <input type="button" value="Add" onclick="addMember()">
+    <input type="button" value="Remove" onclick="removeMember()">
+    <br> <br>
+    <p id="outputlist"></p>
+    <a href="index.html">4Q_FA5_Escovilla_1</a>
+
+    <script>
+        var members = [];
+        var list = '';
+
+        function addMember(){
+            var member = document.getElementById("name").value;
+            members.push(member);
+            for(var element in members){
+                list = list + members[element] + " ";
+            }
+            if(members.length > 7){
+                members.shift();
+            }
+            document.getElementById("outputlist").innerHTML = members;
+        }
+        function removeMember(){
+            var member = document.getElementById("name").value;
+            members.pop(member);
+            for(var element in members){
+                list = list + members[element] + " ";
+            }
+            document.getElementById("outputlist").innerHTML = members;
+        }
+    </script>
+</body>
+</html>
